@@ -1,5 +1,7 @@
 // Test to see if scalatest is set up correctly.
 
+package org.stairwaybook
+
 import org.scalatest.funsuite.AnyFunSuite
 import org.stairwaybook.CubeCalculator
 
