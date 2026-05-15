@@ -22,31 +22,32 @@
  */
 
 
-scala> def greet() = println("hi")
-greet: ()Unit
+def containsNeg(nums: List[Int]): Boolean =
+   var exists = false
+   for num <- nums do
+     if num < 0 then
+       exists = true
+   exists
 
-scala> val iAmUnit = greet() == ()
-                             ^
-       warning: comparing values of types Unit and Unit using `==` will always yield true
-hi
-iAmUnit: Boolean = true
+def containsNeg1(nums: List[Int]) = nums.exists(_ < 0)
+//containsNeg1: (nums: List[Int])Boolean
 
-scala> for i <- 1 to 4 do
-        println(s"Iteration \$i")
-           ^
-       error: '(' expected but identifier found.
+def containsOdd(nums: List[Int]): Boolean =
+   var exists = false
+   for num <- nums do
+     if num % 2 == 1 then
+       exists = true
+   exists
 
-scala> for i <- 1 until 4 do
-        println(s"Iteration \$i")
-           ^
-       error: '(' expected but identifier found.
+def containsOdd1(nums: List[Int]) = nums.exists(_ % 2 == 1)
+//containsOdd1: (nums: List[Int])Boolean
 
-scala> val a = 1
-a: Int = 1
+var assertionsEnabled = true
 
-scala> val a = 2
-a: Int = 2
+def myAssert(predicate: () => Boolean) =
+ if assertionsEnabled && !predicate() then
+   throw new AssertionError
 
-scala> println(a)
-2
-
+def boolAssert(predicate: Boolean) =
+   if assertionsEnabled && !predicate then
+     throw new AssertionError

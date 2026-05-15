@@ -22,39 +22,23 @@
  */
 
 
-scala> 1 + 2
-res0: Int = 3
+def greet() = println("hi")
+//greet: ()Unit
 
-scala> res0 * 3
-res1: Int = 9
+val iAmUnit = greet() == ()
+//iAmUnit: Boolean = true
 
-scala> println("Hello, world!")
-Hello, world!
+for i <- 1 to 4 do
+  println(s"Iteration $i")
 
-scala> val msg = "Hello, world!"
-msg: String = Hello, world!
+for i <- 1 until 4 do
+  println(s"Iteration $i")
 
-scala> val msg2: java.lang.String = "Hello again, world!"
-msg2: String = Hello again, world!
+val a = 1
+//a: Int = 1
 
-scala> val msg3: String = "Hello yet again, world!"
-msg3: String = Hello yet again, world!
+val a2 = 2
+//a2: Int = 2
 
-scala> println(msg)
-Hello, world!
-
-scala> msg = "Goodbye cruel world!"
-           ^
-       error: reassignment to val
-
-scala> var greeting = "Hello, world!"
-greeting: String = Hello, world!
-
-scala> greeting = "Leave me alone, world!"
-mutated greeting
-
-scala> val multiLine =
-
-scala> def greet() = println("Hello, world!")
-greet: ()Unit
-
+println(a2)
+//2

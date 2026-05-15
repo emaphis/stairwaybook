@@ -26,3 +26,5 @@ package org.stairwaybook.givens
 // imports prefPromptOrd and prefDrinkOrd
 import TomsPrefs.{given Ordering[PreferredPrompt],
    given Ordering[PreferredDrink]}
+
+class prefPromptOrd
